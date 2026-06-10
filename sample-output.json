@@ -1,35 +1,18 @@
 {
 	"company_name": "BrightEdge Analytics",
-	"website": "https://www.brightedge.com",
-	"summary": "BrightEdge Analytics provides an AI-driven SEO and content performance platform that helps enterprises optimize organic search, measure content ROI, and uncover growth opportunities.",
-	"industry": "MarTech / SEO",
-	"estimated_employee_range": "201-500",
-	"location": "San Francisco, CA",
-	"ideal_customer_profile": "Mid-market to enterprise B2B companies investing in content marketing and organic search to drive pipeline.",
-	"key_challenges": [
-		"Demonstrating direct ROI from content investments",
-		"Scaling content operations across global teams",
-		"Integrating SEO signals into sales and product workflows"
-	],
-	"automation_opportunities": [
-		"Automate content gap analysis and content brief generation",
-		"Surface high-intent keywords tied to product pages for paid + organic alignment",
-		"Sync SEO opportunity data into CRM to prioritize outreach"
-	],
+	"company_summary": "BrightEdge Analytics is an enterprise SEO and content performance platform that helps marketing teams optimize organic visibility, measure content ROI, and identify high‑intent growth opportunities.",
+	"industry": "Marketing Technology / SEO",
+	"target_customers": "Mid‑market and enterprise B2B companies with active content marketing and SEO programs.",
+	"business_challenges": "Difficulty attributing content to pipeline, scaling SEO operations, and prioritizing high‑intent pages that drive conversions.",
+	"ai_automation_opportunity": "Automate content gap analysis, surface high‑intent keywords tied to product pages, and sync SEO opportunities into CRM for prioritized outreach.",
 	"lead_score": 84,
 	"priority": "High",
-	"outreach_angle": "Tie content ROI and keyword-driven pipeline to their enterprise customers; propose a pilot to surface top 10 actional SEO opportunities that can be converted into sales-qualified leads.",
-	"cold_email": {
-		"subject": "Quick idea to surface SEO-driven pipeline for BrightEdge",
-		"body": "Hi {{first_name}},\n\nI looked at BrightEdge and saw an opportunity to turn content performance signals into a predictable pipeline — specifically by prioritizing product pages with high purchase intent keywords. We recently helped a similar company identify the top 12 pages that drove a 24% lift in demo requests after targeted content optimization.\n\nWould you be open to a 20-minute pilot to surface your top 10 SEO opportunities?\n\nBest,\n[Your name]"
-	},
-	"linkedin_message": "Hi {{first_name}}, noticed BrightEdge focuses heavily on content-driven growth. Have you explored a short pilot that ties content wins directly to demo conversions? Quick chat?",
+	"outreach_angle": "Highlight how AI‑driven content insights can directly increase demo conversions by prioritizing high‑intent product pages.",
+	"linkedin_message": "Hi {{first_name}}, noticed BrightEdge focuses heavily on content‑driven growth. Have you explored using AI to surface high‑intent SEO opportunities tied directly to demo conversions? Worth a quick chat.",
+	"cold_email": "Hi {{first_name}},\n\nI took a look at BrightEdge and noticed a strong opportunity to tie content performance signals directly to pipeline — especially by prioritizing product pages with high‑intent keywords. We recently helped a similar MarTech company identify the top 12 pages that drove a 24% lift in demo requests after targeted optimization.\n\nWould you be open to a short pilot to surface your top 10 SEO opportunities?\n\nBest,\n[Your Name]",
 	"discovery_questions": [
-		"How do you currently measure content-to-pipeline impact?",
+		"How do you currently measure content‑to‑pipeline impact?",
 		"Which teams own content optimization vs. conversion optimization?",
-		"Do you have a prioritized backlog of product pages by purchase intent?"
-	],
-	"source_url": "https://www.brightedge.com",
-	"collected_at": "2026-06-10T14:22:00Z",
-	"notes": "Score combines company size, product fit, presence of high-intent content, and detectable technical SEO gaps."
+		"Do you maintain a prioritized backlog of high‑intent product pages?"
+	]
 }
