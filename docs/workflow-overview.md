@@ -1,66 +1,90 @@
 # Workflow Overview
 
-This document explains the end-to-end flow of the AI Prospect Intelligence & Lead Scoring Agent.
+This document explains the end-to-end flow of the AI Prospect Intelligence & Lead Scoring Agent, following the exact execution sequence defined in the n8n workflow.
 
 ---
 
-## 1. Company Input
-The workflow begins with a company name or website URL provided by the user.
+## 1. Company Input  
+The workflow begins with a Set Node that defines two key inputs:
+
+- `company_name`  
+- `website_url`  
+
+These values drive all downstream analysis.
 
 ---
 
-## 2. Website Extraction
-An HTTP Request node fetches the company’s homepage HTML.  
-A parsing step extracts readable text, removing scripts, navigation, and noise.
+## 2. Website Data Collection  
+An HTTP Request node fetches the raw HTML content of the company's homepage using the provided URL.
+
+This step retrieves the full HTML document for processing.
 
 ---
 
-## 3. AI Analysis
-The cleaned website text is sent to OpenAI GPT with structured prompts to generate:
+## 3. Website Content Extraction  
+An HTML Extraction node parses the HTML and extracts readable text from the `<body>` element.
 
-- Company summary  
-- Industry context  
-- Key offerings  
-- Pain points  
-- Opportunities  
-- ICP alignment  
-- Lead score  
+This step removes:
 
----
+- scripts  
+- styles  
+- navigation  
+- boilerplate  
 
-## 4. Lead Scoring
-The AI model evaluates the company using signals such as:
-
-- Relevance to ICP  
-- Website clarity  
-- Market positioning  
-- Problem-solution fit  
-- Growth indicators  
-
-A score from **0-100** is generated.
+The result is a clean `page_text` string ready for AI analysis.
 
 ---
 
-## 5. Outreach Preparation
-The workflow generates:
+## 4. AI Prospect Intelligence  
+The cleaned website text is sent to the OpenAI node with a structured prompt.  
+The model generates a complete JSON object containing:
 
-- Personalized outreach message  
-- Discovery questions  
-- Value proposition tailored to the company  
+- company summary  
+- industry  
+- target customers  
+- business challenges  
+- AI/automation opportunities  
+- lead score  
+- priority  
+- outreach angle  
+- cold email  
+- LinkedIn message  
+- discovery questions  
+
+This single step handles both **analysis** and **outreach generation**.
 
 ---
 
-## 6. Database Update
-All structured fields are appended to a Google Sheets database.
+## 5. Structured Data Processing  
+A Code Node cleans and formats the AI output:
+
+- removes markdown  
+- parses JSON  
+- formats discovery questions into bullet points  
+- outputs a consistent, structured object  
+
+This ensures clean data for both email delivery and database storage.
 
 ---
 
-## 7. Output Delivery
-The workflow returns:
+## 6. Prospect Brief Delivery  
+A Gmail node sends a complete sales intelligence brief to the workflow owner.  
+The email includes all AI-generated insights, scoring, and outreach content.
 
-- AI insights  
-- Lead score  
-- Outreach message  
-- Google Sheets row link  
+This provides immediate, actionable intelligence.
 
-This makes the workflow reusable for any number of target companies.
+---
+
+## 7. Lead Intelligence Database Update  
+A Google Sheets node appends a new row to the central database, storing:
+
+- company details  
+- insights  
+- challenges  
+- opportunities  
+- lead score  
+- outreach angle  
+- discovery questions  
+- status  
+
+This creates a reusable, scalable sales intelligence repository.

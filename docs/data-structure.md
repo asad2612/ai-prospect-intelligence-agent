@@ -1,43 +1,44 @@
 # Data Structure
 
-This document defines the input, output, and storage schemas used by the AI Prospect Intelligence & Lead Scoring Agent.  
-The goal is to ensure consistent data flow across all workflow components (n8n -> OpenAI -> Google Sheets -> JSON output).
+This document defines the input, AI output, and storage schemas used by the AI Prospect Intelligence & Lead Scoring Agent.  
+The goal is to maintain consistent data flow across all workflow components (n8n -> OpenAI -> Gmail -> Google Sheets).
 
 ---
 
-## 📥 Input Schema
+## Input Schema
 
-The workflow accepts two primary inputs:
+The workflow begins with a Set Node that defines two required inputs:
 
 ```json
 {
   "company_name": "string",
   "website_url": "string"
 }
-```
 
-### Notes
-- `company_name` is used for context and personalization.
-- `website_url` is used for HTML extraction and analysis.
-- If only one is provided, the workflow still runs (fallback logic included).
+Notes
+- These values are manually set or injected before execution.
+- Both fields are required because the workflow does not include fallback logic.
 
 ---
 
-## 🧠 AI Output Schema
+## AI Output Schema
 
-The OpenAI node returns a structured JSON object with all insights, analysis, and scoring fields.
+The OpenAI node returns a strictly formatted JSON object containing all analysis, scoring, and outreach fields.
 
 ```json
 {
-  "summary": "string",
+  "company_name": "string",
+  "company_summary": "string",
   "industry": "string",
-  "offerings": "string",
-  "pain_points": "string",
-  "opportunities": "string",
-  "icp_fit": "string",
+  "target_customers": "string",
+  "business_challenges": "string",
+  "ai_automation_opportunity": "string",
   "lead_score": "number",
-  "outreach_message": "string",
-  "discovery_questions": "string"
+  "priority": "string",
+  "outreach_angle": "string",
+  "linkedin_message": "string",
+  "cold_email": "string",
+  "discovery_questions": "string or array"
 }
 ```
 
@@ -45,56 +46,48 @@ The OpenAI node returns a structured JSON object with all insights, analysis, an
 
 | Field | Description |
 |-------|-------------|
-| summary | High-level overview of the company |
-| industry | Industry classification inferred from website |
-| offerings | Products/services the company provides |
-| pain_points | Problems the company likely faces |
-| opportunities | Areas where your solution can help |
-| icp_fit | How well the company matches your Ideal Customer Profile |
-| lead_score | AI-generated score (0-100) with reasoning |
-| outreach_message | Personalized outreach message |
-| discovery_questions | Tailored questions for a sales conversation |
+| company_name | Name of the company being analyzed |
+| company_summary | High-level overview generated from website text |
+| industry | Short industry classification |
+| target_customers | ICP or audience inferred from the website |
+| business_challenges | Key pain points extracted from content |
+| ai_automation_opportunity | Where AI or automation can add value |
+| lead_score | AI-generated score (1-100) |
+| priority | High / Medium / Low |
+| outreach_angle | One-sentence personalized hook |
+| linkedin_message | Short LinkedIn outreach message |
+| cold_email | Full cold email tailored to the company |
+| discovery_questions | 3-5 tailored sales discovery questions |
 
 ---
 
-## 📊 Google Sheets Schema
+## Google Sheets Schema
 
-The workflow appends a new row to Google Sheets for every processed company.
+Each processed company is appended as a new row in the Lead Intelligence Database.
 
 ### Columns
-
-company  
-website  
-summary  
-industry  
-offerings  
-pain_points  
-opportunities  
-icp_fit  
-lead_score  
-outreach_message  
-discovery_questions  
-timestamp  
+- Company Name
+- Website
+- Date Added
+- Industry
+- Target Customers (ICP)
+- AI / Automation Opportunity
+- Key Pain Points
+- Lead Score
+- Priority
+- Personalized Outreach Angle
+- Discovery Call Questions
+- Status
 
 ### Notes
-- `timestamp` is generated automatically inside n8n.
-- All fields are stored as plain text for maximum compatibility.
-- This sheet acts as a reusable sales intelligence database.
+- Date Added is generated automatically using `$now`.
+- All fields are stored as plain text for compatibility.
+- The sheet acts as a persistent sales intelligence repository.
 
 ---
 
-## 🧾 JSON Output Example
+## Data Flow Summary
 
-A real example of the final structured output is available in:
-
-sample-output.json
-
-This file demonstrates the exact format returned by the workflow and stored in Google Sheets.
-
----
-
-## 🔄 Data Flow Summary
-
-Input -> Website Extraction -> AI Analysis -> Lead Scoring -> Outreach Generation -> Google Sheets -> JSON Output
+Input -> Website Extraction -> HTML Parsing -> AI Analysis -> Data Cleaning -> Gmail Delivery -> Google Sheets Storage
 
 Each stage uses the schemas above to maintain consistency and reliability across the entire automation system.

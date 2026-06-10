@@ -1,56 +1,81 @@
 # Prompt Engineering
 
-This workflow uses structured prompts to ensure consistent, high-quality AI outputs.
+This workflow uses a single, highly structured prompt to ensure consistent, machine-readable AI outputs. The prompt is designed to extract business insights, generate outreach content, and assign a lead score in one unified step.
 
 ---
 
-## Website Analysis Prompt
+## Unified Website Intelligence Prompt
 
-The website text is passed into a prompt that requests:
+The cleaned website text is passed into a single OpenAI prompt that instructs the model to return a strictly formatted JSON object containing:
 
-- Company summary  
-- Industry  
-- Key offerings  
-- Pain points  
-- Opportunities  
-- ICP fit  
-- Lead score justification  
+- company_name  
+- company_summary  
+- industry  
+- target_customers  
+- business_challenges  
+- ai_automation_opportunity  
+- lead_score  
+- priority  
+- outreach_angle  
+- linkedin_message  
+- cold_email  
+- discovery_questions  
 
-The output is formatted as JSON for easy parsing.
+The prompt includes:
+
+- a predefined JSON schema  
+- explicit field definitions  
+- strict formatting rules  
+- instructions to return **JSON only**  
+- constraints on lead_score (1-100)  
+- constraints on priority (High / Medium / Low)  
+- rules for discovery questions (3-5 items)
+
+This ensures deterministic, parseable output.
 
 ---
 
-## Outreach Prompt
+## Prompt Structure
 
-A second prompt generates:
+The prompt contains:
 
-- Personalized outreach message  
-- Discovery questions  
-- Value proposition  
-- CTA  
+### **1. Role Assignment**
+The model is instructed to act as a GTM analyst preparing sales intelligence.
 
-The tone is professional, concise, and tailored to the company’s context.
+### **2. Input Context**
+- company name  
+- extracted website text  
+
+### **3. JSON Schema**
+A full JSON template is included to enforce structure.
+
+### **4. Output Rules**
+- no markdown  
+- no explanations  
+- no additional text  
+- valid JSON only  
+- concise fields  
+- fixed categories  
 
 ---
 
-## Lead Scoring Prompt
+## Why a Single Prompt?
 
-A dedicated prompt evaluates:
+Using one unified prompt ensures:
 
-- Relevance  
-- Market maturity  
-- Problem awareness  
-- Fit with ICP  
-- Growth potential  
-
-The model returns a score from 0-100 with reasoning.
+- consistent formatting  
+- fewer parsing errors  
+- faster execution  
+- tightly coupled insights and outreach  
+- predictable structure for Google Sheets  
 
 ---
 
 ## Prompt Design Principles
 
-- Clear role assignment  
-- Structured JSON outputs  
-- Explicit field definitions  
+- Clear role definition  
+- Strict JSON schema  
 - Deterministic formatting  
 - Minimal ambiguity  
+- Explicit constraints  
+- Output validation through post-processing  
