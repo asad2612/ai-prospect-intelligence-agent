@@ -138,9 +138,10 @@ If you'd like help building automation workflows, AI agents, or GTM systems:
 
 **Asad Ali**  
 Growth & Automation | AI-FANTRY  
-Magdeburg, Germany
-Email: theasadali26@gmail.com
-LinkedIn: linkedin.com/in/asad-ali26/
+Magdeburg, Germany  
+
+- **Email:** theasadali26@gmail.com  
+- **LinkedIn:** https://linkedin.com/in/asad-ali26/
 
 
 
