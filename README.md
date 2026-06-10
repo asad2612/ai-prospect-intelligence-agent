@@ -6,7 +6,7 @@ This project demonstrates how AI, automation, and workflow orchestration can rep
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 - Automated company website extraction  
 - AI-generated summaries, insights, and opportunity analysis  
@@ -18,7 +18,7 @@ This project demonstrates how AI, automation, and workflow orchestration can rep
 
 ---
 
-## 🧠 Architecture Overview
+## Architecture Overview
 
 ![Workflow Diagram](assets/workflow-diagram.png)
 
@@ -55,7 +55,7 @@ This project demonstrates how AI, automation, and workflow orchestration can rep
 
 ---
 
-## 🔍 How It Works
+## How It Works
 
 1. **Company Input**  
    The workflow begins with a Set Node defining the company name and website URL.
@@ -73,7 +73,7 @@ This repository demonstrates how AI, automation, and lightweight orchestration r
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 - Automated website extraction and text cleaning
 - AI-generated company summaries, ICP hints, and opportunity analysis
@@ -85,7 +85,7 @@ This repository demonstrates how AI, automation, and lightweight orchestration r
 
 ---
 
-## 🧠 Architecture Overview
+## Architecture Overview
 
 ![Workflow Diagram](assets/workflow-diagram.png)
 
@@ -103,7 +103,7 @@ This repository demonstrates how AI, automation, and lightweight orchestration r
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 ├── README.md
@@ -124,7 +124,7 @@ This repository demonstrates how AI, automation, and lightweight orchestration r
 
 ---
 
-## 🔍 How It Works (quick)
+## How It Works
 
 1. Company input (name + URL) is provided to the workflow.
 2. The workflow fetches the website HTML and extracts readable text (removes scripts/styles/boilerplate).
@@ -134,7 +134,7 @@ This repository demonstrates how AI, automation, and lightweight orchestration r
 
 ---
 
-## 🧭 Getting started
+## Getting started
 
 Prerequisites
 
@@ -155,7 +155,7 @@ Notes
 
 ---
 
-## 📊 Use Cases
+## Use Cases
 
 - SDRs / BDRs automating top-of-funnel research
 - GTM teams enriching CRM records with AI-derived signals
@@ -164,34 +164,49 @@ Notes
 
 ---
 
-## 🧪 Sample Output
+## Sample Output
 
-A real example of the final structured JSON output is available in `sample-output.json` (also shown below for reference). The JSON contains normalized fields that are safe to append directly to a Google Sheet or import into a CRM.
+A real example of the final structured JSON output is available in: `sample-output.json`
 
----
-
-## ✅ Contributing
-
-If you'd like to contribute improvements (better prompts, scoring rules, or connectors), please open an issue or submit a pull request. Keep changes small and include tests or a sample export when modifying the data shape.
+This file shows the exact format stored in Google Sheets and delivered via email.
 
 ---
 
-## 📬 Contact
+## Setup Instructions
 
-For questions or collaboration, open an issue or contact the repository owner.
+1. Import the workflow JSON into **n8n**  
+2. Add your **OpenAI API key**  
+3. Connect **Google Sheets** via OAuth  
+4. Connect **Gmail** via OAuth  
+5. Update the Set Node with your target company name and website  
+6. Run the workflow  
 
 ---
 
-## ⚖️ License
+## Future Improvements
 
-This project is provided under no specific license in the repository. Add a LICENSE file if you want to apply an open-source license.
+- Add CRM integration (HubSpot / Salesforce)  
+- Add multi-page crawling for deeper analysis  
+- Add competitor comparison  
+- Add automated enrichment (LinkedIn, Crunchbase, etc.)  
+- Add scoring model customization  
 
 ---
 
-## Next steps / Ideas
+## License
 
-- Export the n8n workflow JSON and add it to the repo for one-click import
-- Add a small script to convert `sample-output.json` rows into CSV for quick upload to CRMs
-- Add end-to-end tests that run the Code Node transformer against sample prompts to ensure stable fields
+This project is released under the MIT License.
 
-Completion: README updated for clarity, added getting-started guidance, and linked to `sample-output.json`.
+---
+
+## Contact
+
+If you'd like help building automation workflows, AI agents, or GTM systems:
+
+**Asad Ali**  
+Growth & Automation | AI-FANTRY  
+Magdeburg, Germany  
+
+
+
+
