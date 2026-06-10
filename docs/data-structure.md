@@ -14,7 +14,7 @@ The workflow begins with a Set Node that defines two required inputs:
   "company_name": "string",
   "website_url": "string"
 }
-
+```
 Notes
 - These values are manually set or injected before execution.
 - Both fields are required because the workflow does not include fallback logic.
