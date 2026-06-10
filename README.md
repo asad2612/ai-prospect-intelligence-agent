@@ -24,7 +24,7 @@ This repository demonstrates how AI, automation, and lightweight orchestration r
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - n8n — Workflow automation and orchestration
 - OpenAI GPT — Summarization, signal extraction, and message generation
