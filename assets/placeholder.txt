@@ -1,0 +1,1 @@
+Project image assets live in this folder.
