@@ -1,1 +1,35 @@
-{}
+{
+	"company_name": "BrightEdge Analytics",
+	"website": "https://www.brightedge.com",
+	"summary": "BrightEdge Analytics provides an AI-driven SEO and content performance platform that helps enterprises optimize organic search, measure content ROI, and uncover growth opportunities.",
+	"industry": "MarTech / SEO",
+	"estimated_employee_range": "201-500",
+	"location": "San Francisco, CA",
+	"ideal_customer_profile": "Mid-market to enterprise B2B companies investing in content marketing and organic search to drive pipeline.",
+	"key_challenges": [
+		"Demonstrating direct ROI from content investments",
+		"Scaling content operations across global teams",
+		"Integrating SEO signals into sales and product workflows"
+	],
+	"automation_opportunities": [
+		"Automate content gap analysis and content brief generation",
+		"Surface high-intent keywords tied to product pages for paid + organic alignment",
+		"Sync SEO opportunity data into CRM to prioritize outreach"
+	],
+	"lead_score": 84,
+	"priority": "High",
+	"outreach_angle": "Tie content ROI and keyword-driven pipeline to their enterprise customers; propose a pilot to surface top 10 actional SEO opportunities that can be converted into sales-qualified leads.",
+	"cold_email": {
+		"subject": "Quick idea to surface SEO-driven pipeline for BrightEdge",
+		"body": "Hi {{first_name}},\n\nI looked at BrightEdge and saw an opportunity to turn content performance signals into a predictable pipeline — specifically by prioritizing product pages with high purchase intent keywords. We recently helped a similar company identify the top 12 pages that drove a 24% lift in demo requests after targeted content optimization.\n\nWould you be open to a 20-minute pilot to surface your top 10 SEO opportunities?\n\nBest,\n[Your name]"
+	},
+	"linkedin_message": "Hi {{first_name}}, noticed BrightEdge focuses heavily on content-driven growth. Have you explored a short pilot that ties content wins directly to demo conversions? Quick chat?",
+	"discovery_questions": [
+		"How do you currently measure content-to-pipeline impact?",
+		"Which teams own content optimization vs. conversion optimization?",
+		"Do you have a prioritized backlog of product pages by purchase intent?"
+	],
+	"source_url": "https://www.brightedge.com",
+	"collected_at": "2026-06-10T14:22:00Z",
+	"notes": "Score combines company size, product fit, presence of high-intent content, and detectable technical SEO gaps."
+}
